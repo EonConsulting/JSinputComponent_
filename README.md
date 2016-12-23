@@ -19,14 +19,3 @@ This is a simple converter that lets you paste in GIFT formatted quiz questions 
     ::Q2:: What's between orange and green in the spectrum? 
     { =yellow # right; good! ~red # wrong, it's yellow ~blue # wrong, it's yellow }
 
-And get them downloaded as QTI 1.2 for import into lots of systems like Sakai and 
-Canvas.
-
-GIFT seems to be a micro-format invented by the Moodle community - and a pretty cool 
-idea if I do say so myself.  I like it because I can put quizzes in GitHub :)
-
-   
-
-You can play with my demo server at:
-
-  
