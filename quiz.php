@@ -1,4 +1,13 @@
 <?php
+
+/**
+ *
+ * We require our function config.php
+ * We require  the function parse.php
+ * @var $LAUNCH
+ * @var $gift
+ * @var $link
+ */
 require_once "../config.php";
 require_once "parse.php";
 
@@ -11,6 +20,14 @@ $gift = $LINK->getJson();
 Output::headerJson();
 
 // Check if we got any GIFT
+/**
+ *
+ * Check if we not get any gift
+ * @var $gift
+ * @var $questions
+ * @var $errors
+ * @var $submit
+ */
 if ( $gift === false || strlen($gift) < 1 ) {
     echo ( json_encode(array("status" => "failure", "message" => "This quiz has not yet been configured")));
     return;

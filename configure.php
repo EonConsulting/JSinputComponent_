@@ -1,4 +1,10 @@
 <?php
+/**
+ * @var $_POST
+ * @var $USER
+ * @var $CFG
+ *
+ */
 require_once "../config.php";
 require_once "parse.php";
 require_once "sample.php";
@@ -6,19 +12,39 @@ require_once "sample.php";
 use \Tsugi\Core\Cache;
 use \Tsugi\Core\LTIX;
 
+
+/**
+ * Here we do the sanity check
+ */
 // Sanity checks
 $LAUNCH = LTIX::requireData();
 if ( ! $USER->instructor ) die("Requires instructor role");
 
+
+/**
+ * Model
+ */
 // Model
 $p = $CFG->dbprefix;
 
+
+/**
+ *
+ * @var $_POST
+ * @var $gift
+ * @var $questions
+ * @param gift
+ *
+ */
 if ( isset($_POST['gift']) ) {
     $gift = $_POST['gift'];
     if ( get_magic_quotes_gpc() ) $gift = stripslashes($gift);
     $_SESSION['gift'] = $gift;
 
     // Some sanity checking...
+    /**
+     * Check some sanity checking
+     */
     $questions = array();
     $errors = array();
     parse_gift($gift, $questions, $errors);
@@ -39,7 +65,9 @@ if ( isset($_POST['gift']) ) {
         header( 'Location: '.addSession('configure.php') ) ;
         return;
     }
-
+    /**
+     * We use here some JSON
+     */
     // This is not JSON - no one cares
     $LINK->setJson($gift);
     $_SESSION['success'] = 'Quiz updated';
@@ -48,6 +76,11 @@ if ( isset($_POST['gift']) ) {
     return;
 }
 
+
+/**
+ *
+ * Right here we load our Quiz
+ */
 // Load up the quiz
 if ( isset($_SESSION['gift']) ) { 
     $gift = $_SESSION['gift'];

@@ -1,15 +1,15 @@
 
-GIFT Quiz Tool
+Jsinput component GIFT Quiz 
 ==============
 
-This tool currently contains two pieces of related functionality:
+This Jsinput component currently contains two pieces of related functionality:
 
-* It can author and deliver GIFT-authored quizzes using LTI (index.php)
+* It can author and deliver Jsinput GIFT-authored quizzes using LTI (index.php)
 * It can convert to QTI 1.2 (convert.php)
 
 These two pieces are related because they share a bunch of library code.
 
-Quiz format convertor from GIFT to QTI 1.2
+Quiz format convertor from Jsinput Quiz tool
 ==========================================
 
 This is a simple converter that lets you paste in GIFT formatted quiz questions like:
@@ -25,13 +25,8 @@ Canvas.
 GIFT seems to be a micro-format invented by the Moodle community - and a pretty cool 
 idea if I do say so myself.  I like it because I can put quizzes in GitHub :)
 
-    https://docs.moodle.org/28/en/GIFT_format
+   
 
 You can play with my demo server at:
 
-    https://lti-tools.dr-chuck.com/tsugi/mod/gift/convert.php
-
-
-Comments (and Pull requests) welcome.
-
--- Chuck
+  
